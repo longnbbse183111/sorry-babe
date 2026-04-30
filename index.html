@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Web xin lỗi em</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="bg-blur bg-blur-1"></div>
+  <div class="bg-blur bg-blur-2"></div>
+  <div id="hearts-container" aria-hidden="true"></div>
+
+  <main class="page">
+    <section class="card hero">
+      <p class="kicker">Gửi người anh yêu</p>
+      <h1 id="typing-text" class="apology-text"></h1>
+      <p class="sub-text">Anh biết nhiều lúc anh vô tâm. Anh không muốn làm em buồn nhưng mà nó cứ diễn ra hoài à.</p>
+
+      <div class="question-box">
+        <h2>Em đừng giận anh nữa nha</h2>
+        <div class="actions">
+          <button id="btn-angry" class="btn btn-angry" type="button">Chắc chắn rồi</button>
+          <button id="btn-ok" class="btn btn-ok" type="button">Em giận anh bao giờ</button>
+        </div>
+      </div>
+
+      <div id="reaction-box" class="reaction-box" aria-live="polite"></div>
+    </section>
+
+    <section class="card promises">
+      <h2>Lời hứa của anh</h2>
+      <ul>
+        <li>Sẽ lắng nghe em nhiều hơn.</li>
+        <li>Sẽ dịu dàng hơn trong cách nói chuyện.</li>
+        <li>Sẽ chủ động xin lỗi ngay khi anh sai.</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

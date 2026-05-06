@@ -206,6 +206,87 @@ body {
   margin: 9px 0;
 }
 
+.mistakes h2 {
+  margin-top: 0;
+}
+
+.mistake-form {
+  display: grid;
+  gap: 10px;
+}
+
+.mistake-form input,
+.mistake-form select {
+  border: 1px solid #ffd8e8;
+  border-radius: 12px;
+  padding: 10px 12px;
+  font: inherit;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.82);
+}
+
+.mistake-form input:focus,
+.mistake-form select:focus {
+  outline: 2px solid #ffc6dd;
+  outline-offset: 1px;
+}
+
+.mistake-feedback {
+  min-height: 24px;
+  margin: 10px 0 4px;
+  color: #a13d68;
+  font-weight: 500;
+}
+
+.mistake-list {
+  display: grid;
+  gap: 10px;
+}
+
+.mistake-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 170, 203, 0.42);
+  background: linear-gradient(145deg, rgba(255, 247, 252, 0.95), rgba(255, 235, 246, 0.78));
+  box-shadow: 0 8px 18px rgba(189, 97, 140, 0.1);
+  animation: mistakeFadeIn 0.38s ease both;
+}
+
+.mistake-content {
+  flex: 1;
+}
+
+.mistake-text {
+  margin: 0;
+  line-height: 1.45;
+  color: #6d3d57;
+}
+
+.mistake-meta {
+  margin-top: 6px;
+  font-size: 0.85rem;
+  color: #9e6b85;
+}
+
+.mistake-delete {
+  border: 0;
+  border-radius: 10px;
+  padding: 8px 10px;
+  background: #ffe0ef;
+  color: #922a56;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.mistake-delete:hover {
+  filter: brightness(0.98);
+}
+
 .heart {
   position: fixed;
   bottom: -20px;
@@ -276,6 +357,17 @@ body {
   }
 }
 
+@keyframes mistakeFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (max-width: 620px) {
   .page {
     width: 94%;
@@ -312,7 +404,346 @@ body {
   .card {
     padding: 16px;
   }
-
+  :root {
+    --pink: #ffd9e8;
+    --cream: #fff8ef;
+    --lavender: #e9ddff;
+    --text: #63485d;
+    --accent: #ff7aa8;
+    --accent-soft: #ffb6d1;
+    --ok: #8c73ff;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Be Vietnam Pro", sans-serif;
+    color: var(--text);
+    background: linear-gradient(160deg, var(--cream), var(--pink), var(--lavender));
+    overflow-x: hidden;
+    position: relative;
+    -webkit-tap-highlight-color: transparent;
+    text-size-adjust: 100%;
+  }
+  
+  .bg-blur {
+    position: fixed;
+    border-radius: 999px;
+    filter: blur(70px);
+    opacity: 0.5;
+    z-index: 0;
+    animation: floatBlob 8s ease-in-out infinite alternate;
+  }
+  
+  .bg-blur-1 {
+    width: 240px;
+    height: 240px;
+    background: #ffcfe1;
+    top: -40px;
+    left: -40px;
+  }
+  
+  .bg-blur-2 {
+    width: 280px;
+    height: 280px;
+    background: #d7c8ff;
+    right: -70px;
+    bottom: 8%;
+    animation-delay: 2s;
+  }
+  
+  .page {
+    position: relative;
+    z-index: 1;
+    width: min(920px, 92%);
+    margin: 24px auto 100px;
+    display: grid;
+    gap: 18px;
+  }
+  
+  .card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    padding: 22px;
+    box-shadow: 0 10px 24px rgba(124, 95, 133, 0.12);
+    animation: riseIn 0.6s ease both;
+  }
+  
+  .hero {
+    text-align: center;
+  }
+  
+  .kicker {
+    margin: 4px 0;
+    font-weight: 600;
+    color: #8d6c8f;
+  }
+  
+  .apology-text {
+    margin: 10px auto 8px;
+    max-width: 660px;
+    min-height: 62px;
+    font-size: clamp(1.45rem, 3.9vw, 2.1rem);
+    line-height: 1.35;
+  }
+  
+  .sub-text {
+    max-width: 600px;
+    margin: 0 auto 18px;
+    opacity: 0.9;
+  }
+  
+  .question-box h2,
+  .timeline h2,
+  .promises h2 {
+    margin-top: 8px;
+  }
+  
+  .actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 10px 0;
+  }
+  
+  .btn {
+    border: none;
+    border-radius: 999px;
+    padding: 12px 18px;
+    min-height: 44px;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    touch-action: manipulation;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+  }
+  
+  .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 14px rgba(122, 82, 124, 0.16);
+  }
+  
+  .btn-angry {
+    background: var(--accent-soft);
+    color: #6a3050;
+  }
+  
+  .btn-ok {
+    background: #d9ceff;
+    color: #4b3aa8;
+  }
+  
+  .reaction-box {
+    margin-top: 14px;
+    min-height: 42px;
+    padding: 10px;
+    border-radius: 14px;
+    transition: all 0.35s ease;
+  }
+  
+  .reaction-box.show {
+    background: rgba(255, 255, 255, 0.65);
+  }
+  
+  .reaction-box.begging {
+    color: #8a3c63;
+    animation: wiggle 0.55s ease;
+  }
+  
+  .reaction-box.celebrate {
+    color: #5f3fb6;
+  }
+  
+  .begging-emoji {
+    display: inline-block;
+    animation: pulse 1s ease infinite;
+  }
+  
+  .timeline-list {
+    display: grid;
+    gap: 14px;
+  }
+  
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 18px 1fr;
+    gap: 12px;
+    align-items: start;
+  }
+  
+  .timeline-item h3 {
+    margin: 0 0 4px;
+    font-size: 1rem;
+  }
+  
+  .timeline-item p {
+    margin: 0;
+    opacity: 0.9;
+  }
+  
+  .dot {
+    width: 12px;
+    height: 12px;
+    margin-top: 6px;
+    background: linear-gradient(45deg, #ff9fc3, #b49cff);
+    border-radius: 50%;
+    box-shadow: 0 0 0 5px rgba(255, 177, 210, 0.25);
+  }
+  
+  .promises ul {
+    margin: 10px 0 0;
+    padding-left: 18px;
+  }
+  
+  .promises li {
+    margin: 9px 0;
+  }
+  
+  .heart {
+    position: fixed;
+    bottom: -20px;
+    font-size: 18px;
+    opacity: 0.5;
+    animation: flyUp linear forwards;
+    pointer-events: none;
+  }
+  
+  .confetti {
+    position: fixed;
+    width: 8px;
+    height: 14px;
+    top: -20px;
+    opacity: 0.9;
+    animation: confettiDrop 1.8s linear forwards;
+    pointer-events: none;
+  }
+  
+  @keyframes riseIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes wiggle {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-1.2deg); }
+    75% { transform: rotate(1.2deg); }
+  }
+  
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.09); }
+  }
+  
+  @keyframes floatBlob {
+    from { transform: translateY(0px); }
+    to { transform: translateY(24px); }
+  }
+  
+  @keyframes flyUp {
+    0% {
+      transform: translateY(0) scale(0.8);
+      opacity: 0;
+    }
+    20% {
+      opacity: 0.7;
+    }
+    100% {
+      transform: translateY(-110vh) scale(1.4);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes confettiDrop {
+    0% {
+      transform: translateY(0) rotate(0deg);
+    }
+    100% {
+      transform: translateY(110vh) rotate(720deg);
+      opacity: 0;
+    }
+  }
+  
+  @media (max-width: 620px) {
+    .page {
+      width: 94%;
+      margin-top: 12px;
+      margin-bottom: 24px;
+    }
+  
+    .card {
+      padding: 18px;
+      border-radius: 16px;
+    }
+  
+    .apology-text {
+      min-height: 76px;
+      font-size: clamp(1.3rem, 7vw, 1.7rem);
+    }
+  
+    .sub-text,
+    .reaction-box {
+      font-size: 0.95rem;
+    }
+  
+    .actions {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .btn {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 380px) {
+    .card {
+      padding: 16px;
+    }
+  
+    .kicker {
+      font-size: 0.88rem;
+    }
+  
+    .sub-text {
+      font-size: 0.9rem;
+    }
+  }
+  
+  @supports (padding: max(0px)) {
+    body {
+      padding-left: max(0px, env(safe-area-inset-left));
+      padding-right: max(0px, env(safe-area-inset-right));
+    }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
   .kicker {
     font-size: 0.88rem;
   }

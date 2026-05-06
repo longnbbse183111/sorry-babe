@@ -31,6 +31,22 @@
       <div id="reaction-box" class="reaction-box" aria-live="polite"></div>
     </section>
 
+    <section class="card mistakes">
+      <h2>Lỗi lầm hôm nay của anh 💔</h2>
+      <div class="mistake-form">
+        <input id="mistakeInput" type="text" placeholder="Hôm nay anh đã làm gì sai..." />
+        <select id="mistakeMood">
+          <option value="">Tâm trạng (tùy chọn)</option>
+          <option value="sad">Buồn</option>
+          <option value="guilty">Tha thứ cho đóoo</option>
+          <option value="love">Yêu anh</option>
+        </select>
+        <button id="mistakeSubmitBtn" class="btn btn-angry" type="button">Gửi lỗi lầm</button>
+      </div>
+      <p id="mistakeFeedback" class="mistake-feedback" aria-live="polite"></p>
+      <div id="mistakeList" class="mistake-list"></div>
+    </section>
+
     <section class="card promises">
       <h2>Lời hứa của anh</h2>
       <ul>
@@ -40,6 +56,10 @@
       </ul>
     </section>
   </main>
+
+  <audio id="bg-music" loop preload="auto">
+    <source src="assets/music/sorry.mp3" type="audio/mpeg" />
+  </audio>
 
   <script src="script.js"></script>
 </body>

@@ -30,7 +30,7 @@ function playMusic() {
   if (musicStarted) return;
   if (!bgMusic) return;
 
-  bgMusic.volume = 0.25;
+  bgMusic.volume = 0.1;
   bgMusic.play()
     .then(() => {
       musicStarted = true;
